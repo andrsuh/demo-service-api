@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wine.to.up</groupId>
+    <artifactId>test-service-api</artifactId>
+    <version>${current-version}-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <current-version>0.1.0</current-version>
+        <!-- Нужен для scm -->
+        <git.username>microservices-course-itmo</git.username>
+        <git.repo>service-api-app</git.repo>
+
+        <lombok.version>1.18.10</lombok.version>
+
+        <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
+        <docker-maven-plugin.version>1.0.0</docker-maven-plugin.version>
+        <flyway.version>6.5.1</flyway.version>
+        <dockerfile-maven-version>1.4.13</dockerfile-maven-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-openfeign-core</artifactId>
+            <version>2.2.3.RELEASE</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Нужен для buildnumber-maven-plugin -->
+    <scm>
+        <connection>scm:git:https://https://github.com/${git.username}/${git.repo}.git</connection>
+        <developerConnection>scm:git:https://https://github.com/${git.username}/${git.repo}.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://https://github.com/${git.username}/${git.repo}.git</url>
+    </scm>
+
+    <!-- Нужен для пуша jar в репозиторий libs-snapshot-local в jfrog artifactory -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>f85eb0ecebad-snapshots</name> <!-- Сгенерировано jfrog -->
+            <url>http://${env.JFROG_ARTIFACTORY_IP}:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- Нужен для подключения зависимостей из libs-snapshot-local в jfrog artifactory -->
+    <repositories>
+        <repository>
+            <id>reader-snapshots</id>
+            <url>http://${env.JFROG_ARTIFACTORY_IP}:8081/artifactory/libs-snapshot-local</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+
+            <!-- Нужен для определения текущей ветки(scmBranch) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>${buildnumber-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
