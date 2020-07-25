@@ -12,8 +12,8 @@
     <properties>
         <current-version>0.1.0</current-version>
         <!-- Нужен для scm -->
-        <git.username>microservices-course-itmo</git.username>
-        <git.repo>service-api-app</git.repo>
+        <git.username>andrsuh</git.username>
+        <git.repo>service-api</git.repo>
 
         <lombok.version>1.18.10</lombok.version>
 
