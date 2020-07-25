@@ -15,6 +15,6 @@ public interface KafkaServiceClient extends KafkaService {
     @PostMapping(value = "/send/{topicName}")
     void sendMessage(@PathVariable String topicName, @RequestParam String message);
 
-    @PostMapping(value = "/send/{topicName}")
+    @PostMapping(value = "/send/{topicName}/headers")
     void sendMessageWithHeaders(@PathVariable String topicName, @RequestParam ServiceMessage message);
 }
