@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * the name of the service the request should be redirected to.
  */
 @Primary
-@FeignClient(name = "${application.address}/kafka")
+@FeignClient(name ="service-app/kafka")
 public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}
