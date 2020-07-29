@@ -1,4 +1,4 @@
-#Feign
+# Feign
 >[Подробная инструкция](https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html)
 
 Для использования feign клиента в своем приложении нужно выполнить некоторые условия:
@@ -6,8 +6,8 @@
 - Подтянуть зависимости Spring
 - Подтянуть зависимости [Feign](https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign) 
 
-##Пример Spring Boot Application
-###Подключение Feign в Spring Boot Application 
+## Пример Spring Boot Application
+### Подключение Feign в Spring Boot Application 
 ```java
 @SpringBootApplication
 @EnableFeignClients
@@ -19,7 +19,7 @@ public class Application {
 
 }
 ```
-###Пример использования клиента
+### Пример использования клиента
 ```java
 import com.wine.to.up.test.api.feign.KafkaServiceClient;
 import lombok.RequiredArgsConstructor;
