@@ -16,6 +16,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -23,21 +24,21 @@ import org.springframework.web.bind.annotation.RequestParam;
  * <p>
  * Java feign client will be generated based on this declaration.
  * <p>
- * We use placeholder in the {@link FeignClient#name()} field in order
- * for Ribbon load balancing client and Eureka discovery service to understand
- * the name of the service the request should be redirected to.
+ * Ribbon load balancing client will resolve
+ * the name of the service and request will be redirected to the particular instance.
  */
 @Primary
-@FeignClient(name ="service-app/kafka")
+@FeignClient(name = "service-app/kafka")
 public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}
      */
     @PostMapping(value = "/send/{topicName}")
-    void sendMessage(@PathVariable String topicName, @RequestParam String message);
+    void sendMessage(@PathVariable("topicName") String topicName, @RequestParam("message") String message);
+
     /**
      * {@inheritDoc}
      */
     @PostMapping(value = "/send/{topicName}/headers")
-    void sendMessageWithHeaders(@PathVariable String topicName, @RequestParam ServiceMessage message);
+    void sendMessageWithHeaders(@PathVariable("topicName") String topicName, @RequestBody ServiceMessage messageWithHeaders);
 }
