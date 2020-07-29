@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Map;
 
 /**
- *Example of data class
+ * Example of data class
  */
 @Data
 @AllArgsConstructor

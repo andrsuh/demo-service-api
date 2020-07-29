@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option java_package = "com.wine.to.up.test.api.message";
+
+import "kafka_message_header.proto";
+
+message KafkaServiceMessage {
+    int32 transactionId = 1;
+    string message = 2;
+    repeated KafkaMessageHeader headers = 3;
+}
