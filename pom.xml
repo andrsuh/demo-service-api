@@ -6,11 +6,10 @@
 
     <groupId>com.wine.to.up</groupId>
     <artifactId>test-service-api</artifactId>
-    <version>${current-version}-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
 
     <properties>
-        <current-version>0.1.0</current-version>
         <!-- Нужен для scm -->
         <git.username>andrsuh</git.username>
         <git.repo>service-api</git.repo>

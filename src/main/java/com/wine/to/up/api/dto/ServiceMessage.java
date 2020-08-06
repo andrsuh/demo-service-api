@@ -8,7 +8,7 @@
  * conditions of the License Agreement under which it is provided by or on behalf
  * of Andrsuh INC.
  */
-package com.wine.to.up.test.api.dto;
+package com.wine.to.up.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

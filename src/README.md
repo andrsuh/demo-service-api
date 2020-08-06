@@ -21,7 +21,7 @@ public class Application {
 ```
 ### Пример использования клиента
 ```java
-import com.wine.to.up.test.api.feign.KafkaServiceClient;
+import KafkaServiceClient;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

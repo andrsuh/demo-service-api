@@ -8,10 +8,10 @@
  * conditions of the License Agreement under which it is provided by or on behalf
  * of Andrsuh INC.
  */
-package com.wine.to.up.test.api.feign;
+package com.wine.to.up.api.feign;
 
-import com.wine.to.up.test.api.dto.ServiceMessage;
-import com.wine.to.up.test.api.service.KafkaService;
+import com.wine.to.up.api.service.KafkaService;
+import com.wine.to.up.api.dto.ServiceMessage;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.PathVariable;

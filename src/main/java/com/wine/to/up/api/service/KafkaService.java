@@ -8,9 +8,9 @@
  * conditions of the License Agreement under which it is provided by or on behalf
  * of Andrsuh INC.
  */
-package com.wine.to.up.test.api.service;
+package com.wine.to.up.api.service;
 
-import com.wine.to.up.test.api.dto.ServiceMessage;
+import com.wine.to.up.api.dto.ServiceMessage;
 
 /**
  * Defines an interface for communicating with kafka

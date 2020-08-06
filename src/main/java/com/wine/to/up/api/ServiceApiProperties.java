@@ -1,4 +1,4 @@
-package com.wine.to.up.test.api;
+package com.wine.to.up.api;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
