@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.wine.to.up.test.api.message";
+option java_package = "com.wine.to.up.api.message";
 
 //this class is treated by Protobuf.
 //During "generate-sources" phase (install includes it) java classes are generates (see folder "target/")
