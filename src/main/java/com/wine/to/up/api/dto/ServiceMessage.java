@@ -11,7 +11,9 @@
 package com.wine.to.up.api.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 import java.util.Map;
@@ -19,7 +21,9 @@ import java.util.Map;
 /**
  * Example of data class
  */
-@Data
+@NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
 public class ServiceMessage {
     @NotNull
