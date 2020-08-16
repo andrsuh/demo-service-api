@@ -1,6 +1,7 @@
 # Feign
 >[Подробная инструкция](https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html)
 
+
 Для использования feign клиента в своем приложении нужно выполнить некоторые условия:
 - Подтянуть данную зависимость с API в свое приложение
 - Подтянуть зависимости Spring
