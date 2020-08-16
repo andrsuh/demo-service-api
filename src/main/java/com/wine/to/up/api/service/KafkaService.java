@@ -19,16 +19,14 @@ public interface KafkaService {
     /**
      * Sends message to kafka topic
      *
-     * @param topicName name of the topic
      * @param message   message
      */
-    void sendMessage(String topicName, String message);
+    void sendMessage(String message);
 
     /**
      * Sends message to kafka topic with headers
      *
-     * @param topicName          name of the topic
      * @param messageWithHeaders message with headers
      */
-    void sendMessageWithHeaders(String topicName, ServiceMessage messageWithHeaders);
+    void sendMessageWithHeaders(ServiceMessage messageWithHeaders);
 }

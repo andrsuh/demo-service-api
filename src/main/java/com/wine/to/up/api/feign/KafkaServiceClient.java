@@ -10,14 +10,9 @@
  */
 package com.wine.to.up.api.feign;
 
-import com.wine.to.up.api.service.KafkaService;
 import com.wine.to.up.api.dto.ServiceMessage;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.context.annotation.Primary;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.wine.to.up.api.service.KafkaService;
+import feign.RequestLine;
 
 /**
  * Defines the parameters and paths of REST API of Kafka Service
@@ -27,18 +22,16 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Ribbon load balancing client will resolve
  * the name of the service and request will be redirected to the particular instance.
  */
-@Primary
-@FeignClient(name = "service-app/kafka")
 public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}
      */
-    @PostMapping(value = "/send/{topicName}")
-    void sendMessage(@PathVariable("topicName") String topicName, @RequestParam("message") String message);
+    @RequestLine(value = "POST /kafka/send/")
+    void sendMessage(String message);
 
     /**
      * {@inheritDoc}
      */
-    @PostMapping(value = "/send/{topicName}/headers")
-    void sendMessageWithHeaders(@PathVariable("topicName") String topicName, @RequestBody ServiceMessage messageWithHeaders);
+    @RequestLine(value = "POST kafka/send/headers")
+    void sendMessageWithHeaders(ServiceMessage messageWithHeaders);
 }
