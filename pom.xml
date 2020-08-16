@@ -64,7 +64,7 @@
         <snapshotRepository>
             <id>snapshots</id>
             <name>bc9cbe1b5658-snapshots</name> <!-- Сгенерировано jfrog -->
-            <url>http://10.11.0.43:8081/artifactory/libs-snapshot-local</url>
+            <url>http://10.11.0.43:8082/artifactory/libs-snapshot-local</url>
         </snapshotRepository>
     </distributionManagement>
 
