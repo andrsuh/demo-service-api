@@ -12,6 +12,7 @@ package com.wine.to.up.api.feign;
 
 import com.wine.to.up.api.dto.ServiceMessage;
 import com.wine.to.up.api.service.KafkaService;
+import feign.Headers;
 import feign.RequestLine;
 
 /**
@@ -26,12 +27,14 @@ public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}
      */
-    @RequestLine(value = "POST /kafka/send/")
+    @RequestLine(value = "POST /kafka/send")
+    @Headers("Content-Type: application/json")
     void sendMessage(String message);
 
     /**
      * {@inheritDoc}
      */
-    @RequestLine(value = "POST kafka/send/headers")
+    @RequestLine(value = "POST /kafka/send/headers")
+    @Headers("Content-Type: application/json")
     void sendMessageWithHeaders(ServiceMessage messageWithHeaders);
 }
