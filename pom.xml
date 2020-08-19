@@ -55,14 +55,6 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <!-- Нужен для подключения зависимостей из libs-snapshot-local в jfrog artifactory -->
-    <repositories>
-        <repository>
-            <id>reader-snapshots</id>
-            <url>http://${env.JFROG_ARTIFACTORY_IP}:8081/artifactory/libs-snapshot-local</url>
-        </repository>
-    </repositories>
-
     <build>
         <plugins>
             <plugin>
