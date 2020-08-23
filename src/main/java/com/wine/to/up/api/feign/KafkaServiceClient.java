@@ -20,7 +20,7 @@ import feign.RequestLine;
  * <p>
  * Java feign client will be generated based on this declaration.
  * <p>
- * Ribbon load balancing client will resolve
+ * Docker swarm's load balancing will resolve
  * the name of the service and request will be redirected to the particular instance.
  */
 public interface KafkaServiceClient extends KafkaService {
