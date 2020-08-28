@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.wine.to.up.api.message";
+option java_package = "com.wine.to.up.demo.service.api.message";
 
 import "kafka_message_header.proto";
 

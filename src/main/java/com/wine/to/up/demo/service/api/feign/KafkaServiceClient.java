@@ -8,10 +8,10 @@
  * conditions of the License Agreement under which it is provided by or on behalf
  * of Andrsuh INC.
  */
-package com.wine.to.up.api.feign;
+package com.wine.to.up.demo.service.api.feign;
 
-import com.wine.to.up.api.dto.ServiceMessage;
-import com.wine.to.up.api.service.KafkaService;
+import com.wine.to.up.demo.service.api.dto.ServiceMessage;
+import com.wine.to.up.demo.service.api.service.KafkaService;
 import feign.Headers;
 import feign.RequestLine;
 
