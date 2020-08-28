@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * Defines values from properties. Can be autowired as a regular class
  */
-@PropertySource("classpath:application-api.properties")
+@PropertySource("classpath:application-test-service-api.properties")
 @ConfigurationProperties(prefix = "service.api")
 @Setter
 @Component
