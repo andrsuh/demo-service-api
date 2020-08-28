@@ -1,4 +1,4 @@
-package com.wine.to.up.api;
+package com.wine.to.up.demo.service.api;
 
 import lombok.Getter;
 import lombok.Setter;

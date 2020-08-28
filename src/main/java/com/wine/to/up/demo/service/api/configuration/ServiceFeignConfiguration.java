@@ -1,7 +1,7 @@
-package com.wine.to.up.api.configuration;
+package com.wine.to.up.demo.service.api.configuration;
 
-import com.wine.to.up.api.ServiceApiProperties;
-import com.wine.to.up.api.feign.KafkaServiceClient;
+import com.wine.to.up.demo.service.api.ServiceApiProperties;
+import com.wine.to.up.demo.service.api.feign.KafkaServiceClient;
 import feign.Feign;
 import feign.gson.GsonDecoder;
 import feign.gson.GsonEncoder;
