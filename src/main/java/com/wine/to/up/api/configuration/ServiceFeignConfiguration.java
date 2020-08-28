@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @RequiredArgsConstructor
-public class KafkaFeignConfiguration {
+public class ServiceFeignConfiguration {
     private final ServiceApiProperties serviceApiProperties;
 
     /**
