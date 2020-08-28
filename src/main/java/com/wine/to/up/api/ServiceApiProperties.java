@@ -16,4 +16,5 @@ import org.springframework.stereotype.Component;
 @Getter
 public class ServiceApiProperties {
     private String topicName;
+    private String host;
 }
