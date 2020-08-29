@@ -29,6 +29,7 @@ public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}
      */
+    @Override
     @RequestLine(value = "POST /kafka/send")
     @Headers("Content-Type: application/json")
     void sendMessage(String message);
@@ -36,6 +37,7 @@ public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}
      */
+    @Override
     @RequestLine(value = "POST /kafka/send/headers")
     @Headers("Content-Type: application/json")
     void sendMessageWithHeaders(DemoServiceMessage messageWithHeaders);
@@ -43,6 +45,7 @@ public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}
      */
-    @RequestLine(value = "GET /message")
-    List<String> getAllMessages();
+    @Override
+    @RequestLine(value = "GET /message/history")
+    List<String> getAllSentMessages();
 }
