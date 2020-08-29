@@ -1,6 +1,6 @@
 package com.wine.to.up.demo.service.api.configuration;
 
-import com.wine.to.up.demo.service.api.DemoApiProperties;
+import com.wine.to.up.demo.service.api.DemoServiceApiProperties;
 import com.wine.to.up.demo.service.api.feign.KafkaServiceClient;
 import feign.Feign;
 import feign.gson.GsonDecoder;
@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @RequiredArgsConstructor
-public class DemoFeignConfiguration {
-    private final DemoApiProperties demoServiceApiProperties;
+public class DemoServiceFeignConfiguration {
+    private final DemoServiceApiProperties demoServiceApiProperties;
 
     /**
      * Configured feign client

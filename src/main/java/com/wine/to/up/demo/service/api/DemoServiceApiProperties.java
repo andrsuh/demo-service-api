@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
  * Defines values from properties. Can be autowired as a regular class
  */
 @PropertySource("classpath:application-test-service-api.properties")
-@ConfigurationProperties(prefix = "demo.api")
+@ConfigurationProperties(prefix = "demo.service.api")
 @Setter
 @Component
 @Getter
-public class DemoApiProperties {
+public class DemoServiceApiProperties {
     private String topicName;
     private String host;
 }
