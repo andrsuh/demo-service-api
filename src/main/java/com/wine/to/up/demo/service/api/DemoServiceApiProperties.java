@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
         @PropertySource("classpath:application-test-service-api.properties"),
         @PropertySource("classpath:application-test-service-api-${spring.profiles.active}.properties")
 })
-@ConfigurationProperties(prefix = "service.api")
+@ConfigurationProperties(prefix = "demo.service.api")
 @Setter
 @Component
 @Getter
-public class ServiceApiProperties {
-    private String topicName;
+public class DemoServiceApiProperties {
+    private String messageSentEventsTopicName;
     private String host;
 }

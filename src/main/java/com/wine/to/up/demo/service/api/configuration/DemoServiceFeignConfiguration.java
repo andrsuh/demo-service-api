@@ -1,6 +1,6 @@
 package com.wine.to.up.demo.service.api.configuration;
 
-import com.wine.to.up.demo.service.api.ServiceApiProperties;
+import com.wine.to.up.demo.service.api.DemoServiceApiProperties;
 import com.wine.to.up.demo.service.api.feign.KafkaServiceClient;
 import feign.Feign;
 import feign.gson.GsonDecoder;
@@ -11,12 +11,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Example of feign client
+ * Feign client for accessing demo service
  */
 @Configuration
 @RequiredArgsConstructor
-public class ServiceFeignConfiguration {
-    private final ServiceApiProperties serviceApiProperties;
+public class DemoServiceFeignConfiguration {
+    private final DemoServiceApiProperties demoServiceApiProperties;
 
     /**
      * Configured feign client
@@ -27,6 +27,6 @@ public class ServiceFeignConfiguration {
                 .encoder(new GsonEncoder())
                 .decoder(new GsonDecoder())
                 .client(new OkHttpClient())
-                .target(KafkaServiceClient.class, "http://" + serviceApiProperties.getHost());
+                .target(KafkaServiceClient.class, "http://" + demoServiceApiProperties.getHost());
     }
 }

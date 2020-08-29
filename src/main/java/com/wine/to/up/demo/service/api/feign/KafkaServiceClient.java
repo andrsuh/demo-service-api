@@ -10,10 +10,12 @@
  */
 package com.wine.to.up.demo.service.api.feign;
 
-import com.wine.to.up.demo.service.api.dto.ServiceMessage;
+import com.wine.to.up.demo.service.api.dto.DemoServiceMessage;
 import com.wine.to.up.demo.service.api.service.KafkaService;
 import feign.Headers;
 import feign.RequestLine;
+
+import java.util.List;
 
 /**
  * Defines the parameters and paths of REST API of Kafka Service
@@ -36,5 +38,11 @@ public interface KafkaServiceClient extends KafkaService {
      */
     @RequestLine(value = "POST /kafka/send/headers")
     @Headers("Content-Type: application/json")
-    void sendMessageWithHeaders(ServiceMessage messageWithHeaders);
+    void sendMessageWithHeaders(DemoServiceMessage messageWithHeaders);
+
+    /**
+     * {@inheritDoc}
+     */
+    @RequestLine(value = "GET /message")
+    List<String> getAllMessages();
 }

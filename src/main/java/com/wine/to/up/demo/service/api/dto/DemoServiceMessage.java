@@ -19,13 +19,13 @@ import javax.validation.constraints.NotNull;
 import java.util.Map;
 
 /**
- * Example of data class
+ * Message in format of demo service
  */
 @NoArgsConstructor
 @Getter
 @Setter
 @AllArgsConstructor
-public class ServiceMessage {
+public class DemoServiceMessage {
     @NotNull
     private Map<String, byte[]> headers;
     @NotNull
