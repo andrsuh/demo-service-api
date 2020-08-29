@@ -10,7 +10,9 @@
  */
 package com.wine.to.up.demo.service.api.service;
 
-import com.wine.to.up.demo.service.api.dto.ServiceMessage;
+import com.wine.to.up.demo.service.api.dto.DemoServiceMessage;
+
+import java.util.List;
 
 /**
  * Defines an interface for communicating with kafka
@@ -28,5 +30,10 @@ public interface KafkaService {
      *
      * @param messageWithHeaders message with headers
      */
-    void sendMessageWithHeaders(ServiceMessage messageWithHeaders);
+    void sendMessageWithHeaders(DemoServiceMessage messageWithHeaders);
+
+    /**
+     * Gets all distinct messages that are stored in demo service
+     */
+    List<String> getAllMessages();
 }
