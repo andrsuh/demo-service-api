@@ -39,10 +39,4 @@ public interface KafkaServiceClient extends KafkaService {
     @RequestLine(value = "POST /kafka/send/headers")
     @Headers("Content-Type: application/json")
     void sendMessageWithHeaders(DemoServiceMessage messageWithHeaders);
-
-    /**
-     * {@inheritDoc}
-     */
-    @RequestLine(value = "GET /message")
-    List<String> getAllMessages();
 }

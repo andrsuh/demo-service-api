@@ -31,9 +31,4 @@ public interface KafkaService {
      * @param messageWithHeaders message with headers
      */
     void sendMessageWithHeaders(DemoServiceMessage messageWithHeaders);
-
-    /**
-     * Gets all distinct messages that are stored in demo service
-     */
-    List<String> getAllMessages();
 }
