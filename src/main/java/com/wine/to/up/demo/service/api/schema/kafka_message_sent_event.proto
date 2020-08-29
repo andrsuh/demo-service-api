@@ -5,7 +5,7 @@ option java_package = "com.wine.to.up.demo.service.api.message";
 import "kafka_message_header.proto";
 
 //event that indicates that message was sent to kafka
-message MessageSentToKafkaEvent {
+message KafkaMessageSentEvent {
     int32 transactionId = 1;
     string message = 2;
     repeated KafkaMessageHeader headers = 3;
