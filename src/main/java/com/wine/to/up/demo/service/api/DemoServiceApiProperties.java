@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @SuppressWarnings("SpringPropertySource")
 @PropertySources({
         @PropertySource("classpath:application-demo-service-api.properties"),
-        @PropertySource("classpath:application-demo-service-api-${spring.profiles.active}.properties")
+        @PropertySource("classpath:application-demo-service-api-${spring.profiles.active:local}.properties")
 })
 @ConfigurationProperties(prefix = "demo.service.api")
 @Setter
