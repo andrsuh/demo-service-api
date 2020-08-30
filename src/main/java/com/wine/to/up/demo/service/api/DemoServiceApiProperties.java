@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
  * Defines values from properties. Can be autowired as a regular class
  */
 @PropertySources({
-        @PropertySource("classpath:application-test-service-api.properties"),
-        @PropertySource("classpath:application-test-service-api-${spring.profiles.active}.properties")
+        @PropertySource("classpath:application-demo-service-api.properties"),
+        @PropertySource("classpath:application-demo-service-api-${spring.profiles.active}.properties")
 })
 @ConfigurationProperties(prefix = "demo.service.api")
 @Setter
