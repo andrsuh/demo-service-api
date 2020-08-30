@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Feign client for accessing demo service
  */
+@SuppressWarnings("SpringFacetCodeInspection")
 @Configuration
 @RequiredArgsConstructor
 public class DemoServiceFeignConfiguration {
