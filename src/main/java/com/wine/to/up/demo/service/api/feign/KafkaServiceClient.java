@@ -15,8 +15,6 @@ import com.wine.to.up.demo.service.api.service.KafkaService;
 import feign.Headers;
 import feign.RequestLine;
 
-import java.util.List;
-
 /**
  * Defines the parameters and paths of REST API of Kafka Service
  * <p>
@@ -25,6 +23,7 @@ import java.util.List;
  * Docker swarm's load balancing will resolve
  * the name of the service and request will be redirected to the particular instance.
  */
+//TODO create-service: rename to reflect your endpoints meaning
 public interface KafkaServiceClient extends KafkaService {
     /**
      * {@inheritDoc}

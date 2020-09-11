@@ -1,3 +1,4 @@
+//TODO create-service: move ALL classes (not only this one) to correct package. F.e. for order-service-api all classes should be in "com.wine.to.up.order.service.api.*"
 package com.wine.to.up.demo.service.api.configuration;
 
 import com.wine.to.up.demo.service.api.DemoServiceApiProperties;
@@ -16,12 +17,14 @@ import org.springframework.context.annotation.Configuration;
 @SuppressWarnings("SpringFacetCodeInspection")
 @Configuration
 @RequiredArgsConstructor
+//TODO create-service: rename
 public class DemoServiceFeignConfiguration {
     private final DemoServiceApiProperties demoServiceApiProperties;
 
     /**
      * Configured feign client
      */
+    //TODO create-service: do not forget to change bean name (method name)
     @Bean
     public KafkaServiceClient getKafkaServiceClient() {
         return Feign.builder()

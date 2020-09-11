@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+//TODO create-service: set correct package. F.e. for order-service generated classes should be in "com.wine.to.up.order.service.api.message"
 option java_package = "com.wine.to.up.demo.service.api.message";
 
 import "kafka_message_header.proto";
