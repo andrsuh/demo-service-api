@@ -2,7 +2,7 @@
 package com.wine.to.up.demo.service.api.configuration;
 
 import com.wine.to.up.demo.service.api.DemoServiceApiProperties;
-import com.wine.to.up.demo.service.api.feign.KafkaServiceClient;
+import com.wine.to.up.demo.service.api.feign.DemoServiceClient;
 import feign.Feign;
 import feign.gson.GsonDecoder;
 import feign.gson.GsonEncoder;
@@ -26,11 +26,11 @@ public class DemoServiceFeignConfiguration {
      */
     //TODO create-service: do not forget to change bean name (method name)
     @Bean
-    public KafkaServiceClient getKafkaServiceClient() {
+    public DemoServiceClient getKafkaServiceClient() {
         return Feign.builder()
                 .encoder(new GsonEncoder())
                 .decoder(new GsonDecoder())
                 .client(new OkHttpClient())
-                .target(KafkaServiceClient.class, "http://" + demoServiceApiProperties.getHost());
+                .target(DemoServiceClient.class, "http://" + demoServiceApiProperties.getHost());
     }
 }

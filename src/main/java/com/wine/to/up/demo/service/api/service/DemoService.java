@@ -12,15 +12,17 @@ package com.wine.to.up.demo.service.api.service;
 
 import com.wine.to.up.demo.service.api.dto.DemoServiceMessage;
 
+import java.util.List;
+
 /**
  * Defines an interface for communicating with kafka
  */
 //TODO create-service: rename to reflect your endpoints meaning
-public interface KafkaService {
+public interface DemoService {
     /**
      * Sends message to kafka topic
      *
-     * @param message   message
+     * @param message message
      */
     void sendMessage(String message);
 
@@ -30,4 +32,11 @@ public interface KafkaService {
      * @param messageWithHeaders message with headers
      */
     void sendMessageWithHeaders(DemoServiceMessage messageWithHeaders);
+
+    /**
+     * Get district message content from DB
+     *
+     * @return list of message content
+     */
+    List<String> getSentMessages();
 }

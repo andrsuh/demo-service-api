@@ -8,7 +8,7 @@
     <!--    TODO create-service: rename artifact-->
     <artifactId>demo-service-api</artifactId>
     <!--    TODO create-service: reset version to 0.1.0-->
-    <version>0.2.0-SNAPSHOT</version>
+    <version>0.3.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
